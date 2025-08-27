@@ -18,5 +18,34 @@ namespace ClassRoomNet60
             birthmonth = Bm;
             birthday = Bd;
         }
+
+        public string Season()
+        {
+            string returnString = "";
+            switch (birthmonth)
+            {
+                case 12:
+                case 1:
+                case 2:
+                    returnString = "Winter";
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    returnString = "Spring";
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    returnString = "Summer";
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    returnString = "Autumn";
+                    break;
+            }
+            return $"{returnString}";
+        }
     }
 }
