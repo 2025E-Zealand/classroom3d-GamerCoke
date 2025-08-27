@@ -22,3 +22,20 @@ foreach(Student student in newClass.studentList)
 {
     Console.WriteLine($"Navn {student.name} - Fødselsdag den {student.birthday}. i {student.birthmonth}.\n");
 }
+
+newClass.seasonBirthdays();
+
+var winterquery = from student in newClass.studentList
+                  where student.Season() == "Winter"
+                  select student;
+var springquery = from student in newClass.studentList
+                  where student.Season() == "Spring"
+                  select student;
+var summerquery = from student in newClass.studentList
+                  where student.Season() == "Summer"
+                  select student;
+var autumnquery = from student in newClass.studentList
+                  where student.Season() == "Autumn"
+                  select student;
+Console.WriteLine($"{newClass.className} has following amount of seasonal birthdays:\nWinter {winterquery.Count()}\nSpring {springquery.Count()}\nSummer {summerquery.Count()}\nAutumn {autumnquery.Count()}");
+
