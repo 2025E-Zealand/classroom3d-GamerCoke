@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,12 @@ namespace ClassRoomNet60
         public Student(string Name, int Bm, int Bd)
         {
             name = Name;
+            if (!(Bm >= 1 && Bm <= 12))
+                throw new Exception("Invalid birthmonth, has to be between 1 & 12");
             birthmonth = Bm;
-            birthday = Bd;
+            if (!(Bd >= 1 && Bd <=31))
+                throw new Exception("Invalid birthday, has to be between 1 & 31");
+            birthday = Bd; 
         }
 
         public string Season()
